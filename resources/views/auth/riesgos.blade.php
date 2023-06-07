@@ -3,7 +3,7 @@
 @section('content')
 
     
-    <div class="container">
+    <div class="container mt-3">
         <div class="container text-center border">
             <div class="row">
               <div class="col-sm-3 border" style="font-size: 50px" >SAYA</div>
@@ -14,7 +14,7 @@
               </div>
               <div class="row col-sm-3">
                
-                <div class="" style="text-align: left">Pagina: 1 de 1</div>
+                <div class="d-flex align-items-center justify-content-center" style="text-align: left">Pagina: 1 de 1</div>
               </div>
             </div>
         </div>

@@ -14,8 +14,9 @@
                 </div>  
               </div>
               <div class="row col-sm-3">
-                <div class="">Código contexto: <input type="text" name="codcontexto" ></div>
-                <div class="" style="text-align: left">Pagina: 1 de 1</div>
+                <div class="text-start mt-2">Código contexto: </div>
+                <div><input type="text" class="col-sm-12" name="codcontexto" ></div>
+                <div class="text-center mt-1" >Pagina: 1 de 1</div>
               </div>
             </div>
         </div>

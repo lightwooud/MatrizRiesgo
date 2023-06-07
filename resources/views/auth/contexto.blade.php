@@ -22,18 +22,18 @@
                     <div class="text-start">
                         <input type="date" class="col-sm-12" name="fecha">
                     </div>
-                    <div class="text-center mt-1" style="text-align: left">Pagina: 1 de 1</div>
+                    <div class="text-center mt-1">Pagina: 1 de 1</div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 border text-center">
-            <h5>CONTEXTO</h5>
+        <div class="col-sm-12 border text-center mt-2">
+            <h5 class="my-1">CONTEXTO</h5>
         </div>
 
-        <div class="container text-center border">
+        <div class="container  border">
             <div class="row ">
-                <div class="col-sm-4 text-center">
-                    <h6>OBJETIVO:</h6>
+                <div class="col-sm-4 text-center  ">
+                    <h6 class="mt-1">OBJETIVO:</h6>
                 </div>
                 <input type="textarea" class="col-sm-8" name="objetivo" style="display:inline">
             </div>
@@ -41,7 +41,7 @@
         <div class="container text-center border">
             <div class="row ">
                 <div class="col-sm-4 text-center">
-                    <h6>ALCANCE DE GESTION DE RIESGOS:</h6>
+                    <h6 class="mt-1">ALCANCE DE GESTION DE RIESGOS:</h6>
                 </div>
                 <input type="textarea" class="col-sm-8" name="alcance" style="display:inline">
             </div>
@@ -50,7 +50,7 @@
         <div class="container text-center border">
             <div class="row ">
                 <div class="col-sm-4 text-center">
-                    <h6>ENFOQUE METODOLOGICO:</h6>
+                    <h6 class="mt-1">ENFOQUE METODOLOGICO:</h6>
                 </div>
                 <input type="textarea" class="col-sm-8" name="enfoque" style="display:inline">
             </div>
@@ -58,20 +58,26 @@
 
         <div class="container text-center border">
             <div class="row ">
-                <div class="col-sm-4 text-center">
+                <div class="col-sm-4 d-flex align-items-center justify-content-center">
                     <h6>CRITERIOS BASICOS:</h6>
                 </div>
-                <div class="col-sm-8 ">
-                    <p>Se tratarán los riesgos cuyos niveles sean:
+                <div class="col-sm-8 text-start">
+                    <p class="mb-1">Se tratarán los riesgos cuyos niveles sean: </p>
+                    <ul class="m-0">
 
-                        • EXTREMO
-                        • ALTO
+                        <li>EXTREMO</li>
+                        <li>ALTO</li>
+                    </ul>
+                    <p class="mb-1">
 
                         Se aceptarán los riesgos cuyo resultado después de la valoración de riesgos sean:
+                    </p>
+                    <ul class="m-0">
 
-                        • BAJO
-                        • MODERADO
-
+                        <li>BAJO</li>
+                        <li>MODERADO</li>
+                    </ul>
+                    <p>
                         Una vez aplicados los controles se acepta un riesgo de residual en niveles "BAJO" o "MODERADO"
                     </p>
                     <p>Criterios para la valoración del activo:Se evalúan los niveles de confidencialidad, integridad y disponibilidad requeridos para cada activo de información.
