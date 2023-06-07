@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="bg-light p-5 ">
-        <form method="post" action="{{ route('register.perform') }}" class="container w-25">
+        <form method="post" action="{{ route('contexto.guardar') }}" class="container ">
 
-            
+            @csrf
         <div class="container text-center border">
             <div class="row">
               <div class="col-sm-3 border" style="font-size: 50px" >SAYA</div>
@@ -14,9 +14,9 @@
                 </div>  
               </div>
               <div class="row col-sm-3">
-                <div class="">Código: <input type="text" className="codigo" ></div>
-                <div class="" style="text-align: left">Revision: <input  type="number" class="col-sm-8" className="revision " > </div>
-                <div class="" style="text-align: left">Fecha: <input  type="date" class="col-sm-9"  className="revision col-sm-9" ></div>
+                <div class="">Código: <input type="text" name="codigo" ></div>
+                <div class="" style="text-align: left">Revision: <input  type="number" class="col-sm-8" name="revision" > </div>
+                <div class="" style="text-align: left">Fecha: <input  type="date" class="col-sm-9"  name="fecha" ></div>
                 <div class="" style="text-align: left">Pagina: 1 de 1</div>
               </div>
             </div>
@@ -26,20 +26,20 @@
         <div class="container text-center border">
             <div class="row ">
                 <div class="col-sm-4 text-center"><h6>OBJETIVO:</h6></div>
-                <input type="textarea" class="col-sm-8"  className="objetivo col-sm-8" style="display:inline">
+                <input type="textarea" class="col-sm-8"  name="objetivo" style="display:inline">
             </div>
         </div>
         <div class="container text-center border">
             <div class="row ">
                 <div class="col-sm-4 text-center"><h6>ALCANCE DE GESTION DE RIESGOS:</h6></div>
-                <input type="textarea" class="col-sm-8"  className="alcance col-sm-8" style="display:inline">
+                <input type="textarea" class="col-sm-8"  name="alcance" style="display:inline">
             </div>
         </div>
 
         <div class="container text-center border">
             <div class="row ">
                 <div class="col-sm-4 text-center"><h6>ENFOQUE METODOLOGICO:</h6></div>
-                <input type="textarea" class="col-sm-8"  className="enfoque col-sm-8" style="display:inline">
+                <input type="textarea" class="col-sm-8"  name="enfoque" style="display:inline">
             </div>
         </div>
 
@@ -66,10 +66,11 @@
         </div>
         <div>
             <div class="d-grid gap-2 d-md-flex p-3 justify-content-md-end">
+                
                 <button type="submit" class="btn btn-success">ENVIAR </button>
-                <button type="button" class="btn btn-warning">DOFA</button>
-                <button type="button" class="btn btn-warning">REQUISITOS TECNICOS</button>
-                <button type="button" class="btn btn-warning">MATRIZ DE RIESGOS</button>
+                <a href="{{ route('dofa.show') }}" class="btn btn-warning">DOFA</a>
+                <a href="{{ route('tecnico.show') }}" class="btn btn-warning">REQUISITOS TECNICOS</a>
+                <a href="{{ route('riesgos.index') }}" class="btn btn-warning">MATRIZ DE RIESGOS</a>
             </div>
 
         </div>

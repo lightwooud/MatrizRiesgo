@@ -6,12 +6,7 @@
         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
       </a>
 
-   
-
-    
       @auth
-
-
       
         {{auth()->user()->name}}
         <div class="text-end px-2">
