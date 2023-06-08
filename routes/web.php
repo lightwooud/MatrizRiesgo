@@ -34,7 +34,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
 
 
     Route::get('/usuarios/{id}/editar', 'EditarController@editar')->name('usuarios.editar');
-    
     Route::put('/usuarios/{id}', 'EditarController@update')->name('usuarios.update');
 
 
@@ -42,7 +41,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::delete('/eliminar/{id}', 'EliminarController@eliminar')->name('eliminar');
 
     Route::get('/contexto', 'ContextoController@show')->name('contexto.show');
-    Route::post('/contexto', 'ContextoController@guardar')->name('contexto.guardar');
+    Route::post('/contexto', 'ContextoController@procesarFormulario')->name('contexto.procesarFormulario');
+   
 
     Route::get('/dofa', 'DofaController@show')->name('dofa.show');
     Route::post('/dofa', 'DofaController@guardar')->name('dofa.guardar');

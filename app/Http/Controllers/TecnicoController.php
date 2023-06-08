@@ -12,10 +12,13 @@ class TecnicoController extends Controller
 
     public function show()
     {
+
+        $tecnicos = Tecnico::all();
+
         if (!auth()->check()) {
             return view('auth.notlogin');
         }
-        return view('auth.tecnico');
+        return view('auth.tecnico', compact('tecnicos'));
     }
 
     public function guardar(Request $request)

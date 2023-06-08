@@ -12,11 +12,12 @@ class DofaController extends Controller
 
     public function show()
     {
+        $dofa = Dofa::all();
         if (!auth()->check()) {
             return view('auth.notlogin');
         }
        
-        return view('auth.dofa');
+        return view('auth.dofa',compact('dofa'));
     }
 
     public function guardar(Request $request)

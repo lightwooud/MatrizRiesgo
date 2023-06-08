@@ -1,10 +1,21 @@
 @extends('layouts.app-master')
 
+<style>
+    .td-min-characters {
+        max-width: 200px; /* Ancho máximo del <td> */
+        white-space: nowrap; /* Evita el salto de línea */
+        overflow: hidden; /* Oculta el texto que desborda el ancho */
+        text-overflow: ellipsis; /* Agrega puntos suspensivos al final del texto que desborda */
+    }
+</style>
+
 @section('content')
     <div class="bg-light p-5 ">
-        <form method="post" action="{{ route('contexto.guardar') }}" class="container ">
+        <form method="post" action="{{ route('contexto.procesarFormulario') }}" class="container ">
 
             @csrf
+
+    
         <div class="container text-center border">
             <div class="row">
               <div class="col-sm-3 border" style="font-size: 50px" >SAYA</div>
@@ -16,12 +27,45 @@
               <div class="row col-sm-3">
                 <div class="">Código: <input type="text" name="codigo" ></div>
                 <div class="" style="text-align: left">Revision: <input  type="number" class="col-sm-8" name="revision" > </div>
-                <div class="" style="text-align: left">Fecha: <input  type="date" class="col-sm-9"  name="fecha" ></div>
+                <div class="" style="text-align: left">Fecha: <input  type="date" class="col-sm-9"  name="fecha"></div>
                 <div class="" style="text-align: left">Pagina: 1 de 1</div>
               </div>
             </div>
         </div>
-        <div class="col-sm-12 border text-center"><h5>CONTEXTO</h5></div>
+
+        <div class="mt-5 container border">
+            <h1>Contextos Guardados</h1>
+
+            <!-- Mostrar tabla de riesgos -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Codigo contexto</th>
+                        <th>Revision</th>
+                        <th>Fecha</th>
+                        <th>Objetivo</th>
+                        <th>Alcance</th>
+                        <th>Enfoque</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($contexto as $contextos)
+                        <tr>
+                            <td>{{ $contextos->codigo }}</td>
+                            <td>{{ $contextos->revision }}</td>
+                            <td>{{ $contextos->fecha }}</td>
+                            <td class="td-min-characters">{{ $contextos->objetivo }}</td>
+                            <td class="td-min-characters">{{ $contextos->alcance }}</td>
+                            <td  class="td-min-characters">{{ $contextos->enfoque }}</td>
+                            
+                        
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-sm-12 border text-center"><h1>AGREGAR CONTEXTO</h1></div>
         
         <div class="container text-center border">
             <div class="row ">
@@ -39,7 +83,7 @@
         <div class="container text-center border">
             <div class="row ">
                 <div class="col-sm-4 text-center"><h6>ENFOQUE METODOLOGICO:</h6></div>
-                <input type="textarea" class="col-sm-8"  name="enfoque" style="display:inline">
+                <input type="textarea" class="col-sm-8"  name="enfoque" style="display:inline" >
             </div>
         </div>
 
@@ -64,7 +108,8 @@
                         Criterios de probabilidad de ocurrencia: Se estima la probabilidad de ocurrencia de un riesgo sobre uno o varios activos debido a la explotación de amenazas por una o mas vulnerabilidades (causantes de riesgo). Se tiene en cuenta: Evaluación de riesgos, Cambios en la tecnología, Vulnerabilidades de día cero, Personas, Implementación de controles, No conformidades, Tiempos de respuesta, Criticidad de los activos de información.</p></div>
             </div>
         </div>
-        <div>
+    
+        
             <div class="d-grid gap-2 d-md-flex p-3 justify-content-md-end">
                 
                 <button type="submit" class="btn btn-success">ENVIAR </button>

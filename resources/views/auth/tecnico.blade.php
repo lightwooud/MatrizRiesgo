@@ -1,5 +1,14 @@
 @extends('layouts.app-master')
 
+<style>
+    .td-min-characters {
+        max-width: 200px; /* Ancho máximo del <td> */
+        white-space: nowrap; /* Evita el salto de línea */
+        overflow: hidden; /* Oculta el texto que desborda el ancho */
+        text-overflow: ellipsis; /* Agrega puntos suspensivos al final del texto que desborda */
+    }
+</style>
+
 @section('content')
     <div class="bg-light p-5 ">
         <form method="post" action="{{ route('tecnico.guardar') }}" class="container ">
@@ -21,8 +30,41 @@
               </div>
             </div>
         </div>
-        <div class="container ">
-            <div class="row">
+        <div class="mt-5 container border">
+            <h1>Requisitos tecnicos Guardados</h1>
+
+            <!-- Mostrar tabla de riesgos -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Cod.Contexto</th>
+                        <th>Revision</th>
+                        <th>Fecha</th>
+                        <th>software</th>
+                        <th>Hardware</th>
+                        <th>Reportes</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($tecnicos as $tecnico)
+                        <tr>
+                            <td>{{ $tecnico->codcontexto }}</td>
+                            <td>{{ $tecnico->revision }}</td>
+                            <td>{{ $tecnico->fecha }}</td>
+                            <td class="td-min-characters">{{ $tecnico->software}}</td>
+                            <td class="td-min-characters">{{ $tecnico->hardware}}</td>
+                            <td  class="td-min-characters">{{ $tecnico->reportes}}</td>
+                            
+                        
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-5 container ">
+            <h1>Agregar requisitos tecnicos</h1>
+            <div class="mt-4 row">
                 <div class="col-sm-2 border"><h5>ID</h5>
                     <div class="row border" style="height: 303px">
                         <h5>1</h5>

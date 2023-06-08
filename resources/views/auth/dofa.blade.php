@@ -1,5 +1,14 @@
 @extends('layouts.app-master')
 
+<style>
+    .td-min-characters {
+        max-width: 200px; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+</style>
+
 @section('content')
     <div class="bg-light p-5 ">
         <form method="post" action="{{ route('dofa.guardar') }}" class="container ">
@@ -19,7 +28,41 @@
               </div>
             </div>
         </div>
-        <div class="container border text-center">
+        
+        <div class="mt-5 container border">
+            <h1>DOFAS Guardados</h1>
+
+            <!-- Mostrar tabla de riesgos -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Cod. Contexto</th>
+                        <th>P.Internas</th>
+                        <th>P.Externas</th>
+                        <th>Fortalezas</th>
+                        <th>Debilidades</th>
+                        <th>Oportunidades</th>
+                        <th>Amenazas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($dofa as $dofas)
+                        <tr>
+                            <td class="td-min-characters">{{ $dofas->codcontexto}}</td>
+                            <td class="td-min-characters">{{ $dofas->internas}}</td>
+                            <td class="td-min-characters">{{ $dofas->externas }}</td>
+                            <td class="td-min-characters">{{ $dofas->fortalezas}}</td>
+                            <td class="td-min-characters">{{ $dofas->debilidades}}</td>
+                            <td class="td-min-characters">{{ $dofas->oportunidades}}</td>
+                            <td  class="td-min-characters">{{ $dofas->amenazas}}</td>
+                            
+                        
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        <div class=" mt-5 container border text-center">
             <div class="row">
                 <div class="col-sm-4 border" >
                         <label>PARTES INTERESADAS</label>
